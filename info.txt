@@ -1,0 +1,28 @@
+1 jour de rush (samedi) après la piscine tek2
+On prend comme base le rush CQ github tala
+Systeme de moulinetage (clone + diff + mail) => On code en PEP8 ?
+ON INTERDIT QUOI ? WHILE ?
+
+Content:
+
+	01 HelloWord
+	02 Args, list
+	03 Try Except, cast, string
+	04 Bistro, input
+	05 split, dico
+	06 sort, set, join (pas droit aux loop)
+	07 csv to yaml/json, open fichier
+	08 walk
+	09 xor, bytes, struct
+	10 function, *args, **kwargs, class, import
+	11 hash, comprehension list, sum (oneliner)
+	12 Popen, socket (os.system forbidden)
+	13 http.client, datetime
+	14 pil, np, gba, ~
+	15 import this (wc -l)
+
+exo en open / append (why not exo7)
+ex6 revoir un peu concept bon
+add \n walk
+ex11 peut rajouter des trucs
+merge exo au debut
