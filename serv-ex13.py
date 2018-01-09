@@ -16,7 +16,7 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         h = hashlib.md5(key.encode()).hexdigest()
         now = datetime.today()
         past = (now - timedelta(days=int(h[:3], 16))).strftime("%A %d. %B %Y")
-        future = (now - timedelta(days=int(h[-3:], 16))).strftime("%A %d. %B %Y")
+        future = (now + timedelta(days=int(h[-3:], 16))).strftime("%A %d. %B %Y")
         self.wfile.write(bytes(json.dumps({ "past": past, "future": future }), "utf8"))
         return
 

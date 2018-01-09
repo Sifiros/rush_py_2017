@@ -1,0 +1,43 @@
+{
+    "project": "Rush Python",
+    "repository": {
+	"name": "rush_py_2017",
+	"path": "/tmp/students"
+    },
+    "mountpoints": {
+	"local": "/tmp/mouli",
+	"remote": "/home/test"
+    },
+    "testgroups": [
+	{ "name": "ex13",
+	  "copy": {
+	      "serv-ex13.py": null,
+	      "$ex13.py": null
+	  },
+	  "setup": [
+	      { "bin": "serv-ex13.py",
+		"args": [],
+		"stdin": null,
+		"redirect": null,
+		"service": true
+	      }
+	  ],
+	  "tests": {
+	      "config": {
+		  "bin": "ex13.py",
+		  "ref": "ref/ex13.py",
+		  "timeout": 2
+	      },
+	      "list": [
+		  { "name": "test01",
+		    "args": ["coucou"],
+		    "stdin": null,
+		    "redirect": "output",
+		    "cmpfiles": ["output"]
+		  }
+	      ]
+	  }
+	}
+    ]
+}
+    
