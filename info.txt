@@ -18,7 +18,7 @@ Content:
 	11 hash, comprehension list, sum (oneliner)
 	12 Popen, socket (os.system forbidden)
 	13 http.client, datetime
-	14 pil, np, gba, ~
+	14 pil, np, rgba, ~
 	15 import this (wc -l)
 
 exo en open / append (why not exo7)
