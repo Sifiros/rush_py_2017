@@ -13,7 +13,7 @@ def Verbosable(cls):
     def verbose_get(self):
         return self.__verbose
     def verbose_set(self, v):
-        self.__verbose = not not v
+        self.__verbose = bool(v)
     verbose = property(verbose_get)
     verbose = verbose.setter(verbose_set)
     if hasattr(cls, "__init__"):
