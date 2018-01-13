@@ -10,6 +10,7 @@ from modules.Docker import Container
 import os
 import time
 import shutil
+import subprocess
 from datetime import datetime
 from collections import defaultdict
 from contextlib import closing
@@ -35,20 +36,27 @@ class Mouli():
     def get_closing_container(self):
         mps = self.config.mountpoints
         return closing(Container(
+            "chichaj/mouli",
             volumes=[(mps.local, mps.remote)],
             working_dir=mps.remote,
             verbose=self.verbose
         ))
-    def copyfile(self, mail, oldpath, new):
-        self.vprint(f'Mouli "{self.config.name}": Copying {oldpath}')
+    def get_real_path(self, mail, path):
         repo = self.config.repository
         repopath = os.path.join(repo.path, repo.name, mail)
+        if path.startswith("$"):
+            return os.path.join(repopath, path[1:])
+        return path
+    def copyfile(self, mail, oldpath, new):
+        self.vprint(f'Mouli "{self.config.name}": Copying {oldpath}')
         newpath = self.config.mountpoints.local
         if new is not None:
             newpath = os.path.join(newpath, new)
-        if oldpath.startswith("$"):
-            oldpath = os.path.join(repopath, oldpath[1:])
-        shutil.copy2(oldpath, newpath)
+        oldpath = self.get_real_path(mail, oldpath)
+        cp = shutil.copy2
+        if os.path.isdir(oldpath):
+            cp = shutil.copytree
+        cp(oldpath, newpath)
     def copyfiles(self, mail, files):
         for old, new in files if type(files) is list else files.iteritems():
             self.copyfile(mail, old, new)
@@ -58,8 +66,11 @@ class Mouli():
         kw.update(kwargs)
         return container.run([binary] + config.get("args", []), **kw)
     def docker_reset(self, container):
+        container.run(["rm", "-rf"] + [
+            os.path.join(self.config.mountpoints.remote, path)
+            for path in os.listdir(self.config.mountpoints.local)
+        ])
         container.restart()
-        return container.run(["rm", "-rf", os.path.join(self.config.mountpoints.remote, "*")])
     def run_test(self, mail, container, test, binarylocal, binaryremote, diff_services,
                  timeout=TriggerableContext()):
         self.copyfile(mail, binarylocal, binaryremote)
@@ -75,7 +86,7 @@ class Mouli():
             self.vprint(f'Mouli "{self.config.name}": Test Error')
             return error, {}
         result = {}
-        for filepath in test.cmpfiles:
+        for filepath in test.get("cmpfiles", []):
             try:
                 with open(os.path.join(self.config.mountpoints.local, filepath), "r") as f:
                     content = f.read().strip()
@@ -91,8 +102,9 @@ class Mouli():
             os.mkdir(mps.local)
     def _run_testgroup_setup(self, mail, container, testgroup):
         self.docker_reset(container)
-        self.copyfiles(mail, testgroup.copy)
-        for service in testgroup.services:
+        if testgroup.get("copy"):
+            self.copyfiles(mail, testgroup.copy)
+        for service in testgroup.get("services", []):
             self.docker_exec(container, service.binary, service, detach=True)
             time.sleep(service.wait)
     def _parse_run_result(self, results):
@@ -125,22 +137,31 @@ class Mouli():
                     detailed += "Test Passed"
                 short += f"\t{test_name}: {test_code}\n"
                 detailed += "\n\n"
-        return working / tests, short, detailed
-    def run_tests(self, mail):
-        self.vprint(f'Mouli "{self.config.name}": Running tests for {mail}')
-        self._run_setup()
-        with self.get_closing_container() as container:
-            results = defaultdict(lambda: defaultdict(lambda: JsonObject.Json({
-                "error": [None, None],
-                "output": defaultdict(lambda: ["", ""])
-            })))
-            for testgroup_name, testgroup in self.config.testgroups.iteritems():
-                self.vprint(
-                    f'Mouli "{self.config.name}": Running "{testgroup_name}" grouptest for {mail}'
-                )
-                for ref, (binary, timeout) in enumerate([(testgroup.totest, Timeout(testgroup.timeout)),
-                                                         (testgroup.reference, TriggerableContext())]):
-                    self.vprint(f'Mouli "{self.config.name}": {"Reference" if ref else "Test"} mode')
+        return working / tests if tests else None, short, detailed
+    def _pretests(self, tests, binary, *args):
+        if tests:
+            self.vprint(f'Mouli "{self.config.name}": Running pretests for {binary}')
+        for test in tests:
+            out, err = subprocess.Popen([test, binary], stderr=subprocess.PIPE).communicate()
+            if err:
+                return err.decode()
+    def _run_tests_unsecure(self, mail, container, results, validated):
+        for testgroup_name, testgroup in self.config.testgroups.iteritems():
+            if testgroup_name in validated:
+                continue
+            self.vprint(
+                f'Mouli "{self.config.name}": Running "{testgroup_name}" grouptest for {mail}'
+            )
+            for ref, (binary, timeout) in enumerate(
+                    [(testgroup.totest, Timeout(testgroup.get("timeout", 2))),
+                     (testgroup.reference, TriggerableContext())]
+            ):
+                self.vprint(f'Mouli "{self.config.name}": {"Reference" if ref else "Test"} mode')
+                try:
+                    error = self._pretests(testgroup.get("pretests", []),
+                                           self.get_real_path(mail, binary))
+                    if error:
+                        raise AssertionError(error)
                     self._run_testgroup_setup(mail, container, testgroup)
                     for test_name, test in testgroup.tests.iteritems():
                         self.vprint(
@@ -148,14 +169,38 @@ class Mouli():
                         )
                         diff_services = [
                             self.docker_exec(container, service.binary, service, detach=True)
-                            for service in testgroup.diff_services
+                            for service in testgroup.get("diff_services", [])
                         ]
                         error, output = self.run_test(
-                            mail, container, test, binary, testgroup.binary,
+                            mail, container, test, binary, testgroup.get("binary", "./binary"),
                             diff_services, timeout
                         )
                         results[testgroup_name][test_name].error[ref] = error
                         results[testgroup_name][test_name].output[ref] = output
+                except (FileNotFoundError, AssertionError) as e:
+                    self.vprint(
+                        f'Mouli "{self.config.name}": Test failure'
+                    )
+                    for test_name, test in testgroup.tests.iteritems():
+                        results[testgroup_name][test_name].error[ref] = e
+                        results[testgroup_name][test_name].output[ref] = None
+            validated.append(testgroup_name)
+    def run_tests(self, mail):
+        self.vprint(f'Mouli "{self.config.name}": Running tests for {mail}')
+        self._run_setup()
+        results = defaultdict(lambda: defaultdict(lambda: JsonObject.Json({
+            "error": [None, None],
+            "output": defaultdict(lambda: ["", ""])
+        })))
+        validated = []
+        while True:
+            try:
+                with self.get_closing_container() as container:
+                    self._run_tests_unsecure(mail, container, results, validated)
+            except Exception as e:
+                self.vprint(f'Mouli "{self.config.name}": Encountered an error "{e}"')
+            else:
+                break
         return self._parse_run_result(results)
     def clone_and_test(self, mails, send=False):
         self.vprint(f'Mouli "{self.config.name}": Starting phase of "clone and test"')

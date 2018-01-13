@@ -9,23 +9,362 @@
 	"remote": "/home/test"
     },
     "testgroups": {
-	"Exercise 13": {
-	    "binary": "./ex13",
+
+
+	
+	"EX01: How to print \"Hello World\" ?": {
+	    "totest": "$ex01.py",
+	    "reference": "ref/ex01.py",
+	    "tests": {
+		"Hello World": {
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		}
+	    }
+	},
+
+
+	
+	"EX02: Print reversed arguments": {
+	    "totest": "$ex02.py",
+	    "reference": "ref/ex02.py",
+	    "tests": {
+		"TEST01: No parameters": {
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST02: One parameter": {
+		    "args": ["42"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST03: More parameters": {
+		    "args": ["???", "reversed", "list", "this", "Is"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		}
+	    }
+	},
+
+
+	
+	"EX03: Try cast Except": {
+	    "totest": "$ex03.py",
+	    "reference": "ref/ex03.py",
+	    "tests": {
+		"TEST01: No parameters": {
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST02: One integer parameter": {
+		    "args": ["42"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST03: Two string parameters": {
+		    "args": ["Negative", "Forty Two"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST04: Correct parameters": {
+		    "args": ["-15", "string"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST05: Correct parameters": {
+		    "args": ["0", "money"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST06: Correct parameters": {
+		    "args": ["1", "arm"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST07: Correct parameters": {
+		    "args": ["42", "things"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		}
+	    }
+	},
+
+
+	
+	"EX04: Try Bistromatisme Except": {
+	    "totest": "$ex04.py",
+	    "reference": "ref/ex04.py",
+	    "copy": {
+		"resources/ex04/input_int": "input01",
+		"resources/ex04/input_addition": "input02",
+		"resources/ex04/input_complex": "input03",
+		"resources/ex04/input_broken_math": "input04"
+	    },
+	    "tests": {
+		"TEST01: Integers": {
+		    "stdin": "input01",
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST02: Additions and Substractions": {
+		    "stdin": "input02",
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST03: Complex Calculus": {
+		    "stdin": "input03",
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST04: Did I broke the maths ?": {
+		    "stdin": "input04",
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		}
+	    }
+	},
+
+
+	
+	"EX05: {}": {
+	    "totest": "$ex05.py",
+	    "reference": "ref/ex05.py",
+	    "copy": {
+		"resources/ex05/input_ping_pong": "input01",
+		"resources/ex05/input_simple_append": "input02",
+		"resources/ex05/input_double_append": "input03",
+		"resources/ex05/input_alternate_append": "input04",
+		"resources/ex05/input_error": "input05"
+	    },
+	    "tests": {
+		"TEST01: Ping Pong": {
+		    "stdin": "input01",
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST02: Simple append": {
+		    "stdin": "input02",
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST03: Double Append": {
+		    "stdin": "input03",
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST04: Alternate Append": {
+		    "stdin": "input04",
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST05: Error": {
+		    "stdin": "input05",
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		}
+	    }
+	},
+
+
+	
+	"EX06: NoLoop, Work In Progress": {
+	    "totest": "$ex06.py",
+	    "reference": "ref/ex06.py",
+	    "pretests": ["resources/ex06/pretest.py"],
+	    "tests": {}
+	},
+
+
+	
+	"EX07: import magie": {
+	    "totest": "$ex07.py",
+	    "reference": "ref/ex07.py",
+	    "copy": {
+		"resources/ex07/data_simple.csv": "data01.csv"
+	    },
+	    "tests": {
+		"TEST01: Data Simple": {
+		    "args": ["data01"],
+		    "cmpfiles": ["data01.json", "data01.yml"]
+		},
+		"TEST02: Just don't break": {
+		    "args": ["toto"]
+		},
+		"TEST03: Just don't break V2": {}
+	    }
+	},
+	
+
+
+	"EX08: my_trii": {
+	    "totest": "$ex08.py",
+	    "reference": "ref/ex08.py",
+	    "copy": {
+		"resources/ex08/directory_empty": "dir01",
+		"resources/ex08/directory_content": "dir02",
+		"resources/ex08/directory_recursive": "dir03",
+		"resources/ex08/file": "file01"
+	    },
+	    "tests": {
+		"TEST01: One Empty Directory": {
+		    "args": ["dir01"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST02: One Filled Directory": {
+		    "args": ["dir02"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST03: Blank Walker": {
+		    "args": ["file"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST04: Walkception": {
+		    "args": ["dir03"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST05: Multiple arguments": {
+		    "args": ["dir02", "dir01", "dir02"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST06: No arguments": {
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		}
+	    }
+	},
+	
+
+
+	"EX09: H4<k3r": {
+	    "totest": "$ex09.py",
+	    "reference": "ref/ex09.py",
+	    "copy": {
+		"resources/ex09/data_poule": "data01"
+	    },
+	    "tests": {
+		"TEST01: Pondre des oeufs": {
+		    "args": ["data01"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		}
+	    }
+	},
+	
+
+
+	"EX10: *! **?": {
+	    "totest": "resources/ex10/mouli.py",
+	    "reference": "resources/ex10/mouliref.py",
+	    "copy": {
+		"$ex10.py": null,
+		"ref/ex10.py": "ex10ref.py",
+		"resources/ex10/tests.py": null
+	    },
+	    "tests": {
+		"TEST01: Just don't crash": {}
+	    }
+	},
+	
+
+
+	"EX11: One Punch Line": {
+	    "totest": "$ex11.py",
+	    "reference": "ref/ex11.py",
+	    "pretests": ["resources/ex11/pretest.py"],
+	    "tests": {
+		"TEST01: No arguments": {
+		    "stdout": "output",
+		    "cmpfiles": ["output"]		    
+		},
+		"TEST02: Multiple arguments": {
+		    "args": ["10", "100", "1000", "-5", "72"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]		    
+		}
+	    }
+	},
+	
+
+
+	"EX12: 2319!": {
+	    "totest": "$ex12.py",
+	    "reference": "ref/ex12.py",
+	    "pretests": ["resources/ex12/pretest.py"],
+	    "diff_services": [
+		{ "binary": "nc",
+		  "args": ["-lp", "4242"],
+		  "stdout": "output"
+		}
+	    ],
+	    "tests": {
+		"TEST01: No arguments": {
+		    "cmpfiles": ["output"]
+		},
+		"TEST02: One argument": {
+		    "args": ["-Rla"],
+		    "cmpfiles": ["output"]
+		},
+		"TEST03: Multiple arguments": {
+		    "args": ["-R", "-l", "-a"],
+		    "cmpfiles": ["output"]
+		}
+	    }
+	},
+	
+
+
+	"EX13: httping": {
 	    "totest": "$ex13.py",
 	    "reference": "ref/ex13.py",
 	    "copy": {
-		"serv-ex13.py": null
+		"resources/ex13/server.py": null
 	    },
 	    "services": [
-		{ "binary": "./serv-ex13.py",
-		  "wait": 1
+		{ "binary": "./server.py",
+		  "wait": 3
 		}
 	    ],
-	    "timeout": 2,
-	    "diff_services": [],
 	    "tests": {
-		"Test 01": {
-		    "args": ["coucou"],
+		"TEST01: No arguments": {},
+		"TEST02: One argument": {
+		    "args": ["totoarg"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		}
+	    }
+	},
+	
+
+
+	"EX14: Une idee de genie": {
+	    "totest": "$ex14.py",
+	    "reference": "ref/ex14.py",
+	    "copy": {
+		"resources/ex14/image_spiral.gif": "image01.gif"
+	    },
+	    "timeout": 20,
+	    "tests": {
+		"TEST01: You spin me right round": {
+		    "args": ["image01"],
+		    "cmpfiles": ["image01-reversed.gif"]
+		}
+	    }
+	},
+	
+
+
+	"EX15: This ... is ... this !!!": {
+	    "binray": "./42",
+	    "totest": "$ex15.py",
+	    "reference": "ref/ex15.py",
+	    "pretests": ["resources/ex15/pretest.py"],
+	    "tests": {
+		"Zen": {
 		    "stdout": "output",
 		    "cmpfiles": ["output"]
 		}
