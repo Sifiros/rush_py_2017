@@ -1,0 +1,90 @@
+
+
+                              .?77777777777777$.
+                              777..777777777777$+
+                             .77    7777777777$$$           
+                             .777 .7777777777$$$$           
+                             .7777777777777$$$$$$           
+                             ..........:77$$$$$$$           
+                      .77777777777777777$$$$$$$$$.=======.  
+                     777777777777777777$$$$$$$$$$.========  
+                    7777777777777777$$$$$$$$$$$$$.========= 
+                    77777777777777$$$$$$$$$$$$$$$.========= 
+                    777777777777$$$$$$$$$$$$$$$$ :========+.
+                    77777777777$$$$$$$$$$$$$$+..=========++~
+                    777777777$$..~=====================+++++
+                    77777777$~.~~~~=~=================+++++.
+                    777777$$$.~~~===================+++++++.
+                    77777$$$$.~~==================++++++++: 
+                     7$$$$$$$.==================++++++++++. 
+                     .,$$$$$$.================++++++++++~.  
+                             .=========~.........           
+                             .=============++++++           
+                             .===========+++..+++           
+                             .==========+++.  .++           
+                              ,=======++++++,,++,           
+                              ..=====+++++++++=.            
+                                    ..~+=...                
+
+
+           ______      _   _                                  _     
+           | ___ \    | | | |                                | |    
+           | |_/ /   _| |_| |__   ___  _ __    _ __ _   _ ___| |__  
+           |  __/ | | | __| '_ \ / _ \| '_ \  | '__| | | / __| '_ \ 
+           | |  | |_| | |_| | | | (_) | | | | | |  | |_| \__ \ | | |
+           \_|   \__, |\__|_| |_|\___/|_| |_| |_|   \__,_|___/_| |_|
+                  __/ |                                             
+                 |___/
+
+-------------------------------------------------------------------------------
+
+ _____       ___ _____ 
+| ____|_  __/ _ \___  |
+|  _| \ \/ / | | | / / 
+| |___ >  <| |_| |/ /  
+|_____/_/\_\\___//_/   
+
+
+Subject:
+
+	For this exercise you are required to provide prettylog.py, an 
+executable that will parse a log file given as parameter and to display it in
+a prettyfied fashion.
+
+	By default, standard output will be used.
+ 
+	Below are the prettifying rules you must follow depending on the 
+severity level:
+
+        * INFO will be in green
+        * DEBUG will be in blue
+        * FATAL will be in red
+        * ALERT will be in yellow
+
+	For the colors we provide you with the class Colors in Color.py.
+
+	You'll have to handle multiple parameters:
+
+	prettylog.py -i filepath [-w matchword] [-l sevlevel] [-f file]
+
+	-i|--input Is the path of the input file
+	-w|--word Indicates that only the lines whose log sentence include
+matchword will be dislayed
+it won't match datas like level and date.
+	-l Indicates that only the lines whose severity level are sevlevel
+	-f Is the path of the output file
+
+Example:
+
+	25/10/2015 [INFO] all your base are belong to us
+
+	The INFO word means the level
+	The 25/10/2015 is the date of the log
+	The "all your base are belong to us" is the log sentence (where the
+-w match)
+
+Hint:
+    * argparse
+    * split
+    * in
+    * open
