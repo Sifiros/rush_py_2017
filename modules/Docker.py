@@ -48,5 +48,5 @@ class Container:
         )
         output = Container.Output(self.docker.exec_run([
             "bash", "-c", " ".join(f'"{arg}"' for arg in cmd) + f" < {stdin} > {stdout}"
-        ], socket=True))
+        ], socket=True).output)
         return output if detach else output.get()
