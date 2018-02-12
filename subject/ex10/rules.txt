@@ -1,0 +1,65 @@
+
+
+                              .?77777777777777$.
+                              777..777777777777$+
+                             .77    7777777777$$$
+                             .777 .7777777777$$$$
+                             .7777777777777$$$$$$
+                             ..........:77$$$$$$$
+                      .77777777777777777$$$$$$$$$.=======.
+                     777777777777777777$$$$$$$$$$.========
+                    7777777777777777$$$$$$$$$$$$$.=========
+                    77777777777777$$$$$$$$$$$$$$$.=========
+                    777777777777$$$$$$$$$$$$$$$$ :========+.
+                    77777777777$$$$$$$$$$$$$$+..=========++~
+                    777777777$$..~=====================+++++
+                    77777777$~.~~~~=~=================+++++.
+                    777777$$$.~~~===================+++++++.
+                    77777$$$$.~~==================++++++++:
+                     7$$$$$$$.==================++++++++++.
+                     .,$$$$$$.================++++++++++~.
+                             .=========~.........
+                             .=============++++++
+                             .===========+++..+++
+                             .==========+++.  .++
+                              ,=======++++++,,++,
+                              ..=====+++++++++=.
+                                    ..~+=...
+
+
+           ______      _   _                                  _
+           | ___ \    | | | |                                | |
+           | |_/ /   _| |_| |__   ___  _ __    _ __ _   _ ___| |__
+           |  __/ | | | __| '_ \ / _ \| '_ \  | '__| | | / __| '_ \
+           | |  | |_| | |_| | | | (_) | | | | | |  | |_| \__ \ | | |
+           \_|   \__, |\__|_| |_|\___/|_| |_| |_|   \__,_|___/_| |_|
+                  __/ |
+                 |___/
+
+-------------------------------------------------------------------------------
+  _____
+ | ____|_  __
+ |  _| \ \/ /
+ | |___ >  <
+ |_____/_/\_\
+
+
+Subject:
+    You have to create a python module named TODO witch contain 3 functions:
+        function_absolute witch take an int as parameter and return it's absolute value
+        function_last take args as parameter and return the last one if it exist, else return None
+        function_a_times_b witch takes 2 names arguments a(default = 1) b(default=1) and return a multiplication between a and b
+
+    The module also contains a class names class_storeaninteger
+        It contain a constuctor witch initialize an integer i as member value.
+        An is_zero method that check if i is zero.
+        An add method that take an int as parameter and add it to i
+        A substract method that take an int as parameter and substract it to i.
+
+
+Exemple:
+    TODO
+
+Hint:
+    TODO
+
