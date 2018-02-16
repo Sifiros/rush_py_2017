@@ -46,4 +46,23 @@
 
 
 Subject:
+	You have to read an input file containing the following informations:
+	       - A long integer: representing the message size
+	       - A short integer: representing the key size
+	       - A string: representing the message
+	       - A string: representing the key
+	Next you have to XOR the message with the key (repeat the key if necessary),
+	and store the result in an output file.
+	Everything in the input file is packed, be aware of the size of each element.
+	The two integers are stored in little endian.
 
+	Your program will take a string as paramater.
+	Append '.in' to that string to get the input file path.
+	Append '.out' to get the output file path.
+
+Basic Exemple:
+       ./ex09 ../somewhere/filename
+       	      => ../somewhere/filename.in  is the input file
+       	      => ../somewhere/filename.out is the output file
+
+Hint: struct
