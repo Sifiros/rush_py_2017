@@ -58,8 +58,27 @@ Subject:
 
 
 Exemple:
-    TODO
 
+#!/usr/bin/env python
+ # -*- coding: utf-8 -*-
+
+ import ex10
+
+
+ def main():
+     caca = ex10.class_storeaninteger(7)
+     caca.add(-7)
+     print(caca.is_zero())
+     popo = 12
+     print(ex10.function_a_times_b(popo, popo))
+
+ if __name__ == "__main__":
+     main()
+
+should output :
+    True
+    144
 Hint:
-    TODO
+    class
+    import
 

@@ -1,0 +1,7 @@
+Subject:
+    You have to program an http client that connects on localhost:8081
+    With a GET request, you'll get a JSON object containing 2 values with future and past keys.
+    you have to output the days diffence between future and past.
+Hint:
+    datetime
+    http.client

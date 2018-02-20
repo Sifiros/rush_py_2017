@@ -1,0 +1,10 @@
+Subject:
+    you hqve to write a program that take a ls parameter as argument. it then connects to localhost port 4242 through tcp socket and send the ls output.
+
+Exemple:
+    run nc -lp 4242 in a a terminal and exec ./ex12.py / in an other.
+    nc should output the output of ls /
+
+Hint:
+    socket
+    subprocess
