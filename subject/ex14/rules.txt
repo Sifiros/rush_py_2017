@@ -1,5 +1,8 @@
 Subject:
     You take the path to a video (gif) as parameter. Your goal is to reverse the movement of it.
+
+FILENAME : ex14.py
+
 Hint:
     PIL
     numpy

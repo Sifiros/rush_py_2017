@@ -56,14 +56,14 @@ Subject:
         An add method that take an int as parameter and add it to i
         A substract method that take an int as parameter and substract it to i.
 
+FILENAME : ex10.py
 
-Exemple:
+Example:
 
 #!/usr/bin/env python
  # -*- coding: utf-8 -*-
 
  import ex10
-
 
  def main():
      caca = ex10.class_storeaninteger(7)

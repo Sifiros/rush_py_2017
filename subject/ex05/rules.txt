@@ -51,6 +51,8 @@ Subject:
     If a key is used several times, the values are concatenated.
     On error the program must end without displaying anything.
 
+FILENAME : ex05.py
+
     Exemple:
         dico>mykey:myvalue
             mykey:myvalue

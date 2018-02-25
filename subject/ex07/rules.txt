@@ -74,6 +74,8 @@ it won't match datas like level and date.
 	-l Indicates that only the lines whose severity level are sevlevel
 	-f Is the path of the output file
 
+FILENAME : ex07.py
+
 Example:
 
 	25/10/2015 [INFO] all your base are belong to us

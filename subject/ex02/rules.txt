@@ -49,4 +49,6 @@ Subject:
 
     Create a python program that display the argument list without the program name in reverse order
 
+FILENAME : ex02.py
+
 Hint: slice

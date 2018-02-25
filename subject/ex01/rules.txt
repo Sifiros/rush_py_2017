@@ -49,4 +49,5 @@ Subject:
 
     Create a simple program which will print "hello world" (without the 
 quotes) on the standart output.
-    The file will be called hello_world.py
+
+FILENAME : hello_world.py
