@@ -1,7 +1,10 @@
 Subject:
     You have to program an http client that connects on localhost:8081
-    With a GET request, you'll get a JSON object containing 2 values with future and past keys.
-    you have to output the days diffence between future and past.
+    The program parameter will be a path on the server.
+    With a GET request on this path, you'll get a JSON object containing 2 values:
+    	 - future
+	 - past
+    You have to output the days diffence between future and past.
 
 FILENAME : ex13.py
 

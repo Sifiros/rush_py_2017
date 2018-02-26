@@ -1,5 +1,8 @@
 Subject:
-    You take the path to a video (gif) as parameter. Your goal is to reverse the movement of it.
+    Your program will take a string as parameter.
+    Add '.gif' to get your input file
+    Add '-reversed.gif' to get your output file
+    Your goal is to reverse the movement of the gif and apply a binary inversion on the colors.
 
 FILENAME : ex14.py
 

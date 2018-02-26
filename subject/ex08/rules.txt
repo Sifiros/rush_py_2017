@@ -47,18 +47,37 @@
 
 Subject:
 
-	You have to create a program named hashing.py which will take a string in 
-parameter and will output the hash of the string in md5, sha1, and sha384 all 
-of them should be in hexadecimal
+	You have to create a tree-like program that walks through your filesystem,
+	and display every folder name (even the hidden ones).
+	No parameter is equivalent to a '.' parameter.
+	If there are multiple parameters separate the outputs by a newline.
+	
 
 FILENAME : ex08.py
 
 Example:
 
-	$> ./hashing.py
-	please put a parameter
-	$> ./hashing.py lol
-	md5: 9cdfb439c7876e703e307864c9167a15
-	sha1: 403926033d001b5279df37cbbe5287b7c7c267fa
-	sha384: b848a55bbc6ad4f225d2089bca8c6ca307d87d0281c7b6e7e34044bb54c4c61
-279b154d57979abfb0fb6c911dc241684
+	./ex08.py somefolder ../
+		somefolder
+		|--subfolder1
+		|--subfolder2
+		|  |--subsubfolder
+		|  |  |--subsubsubfolder1
+		|  |  |--subsubsubfolder2
+		|--subfolder3
+
+		..
+		|--somefolder
+		|  |--subfolder1
+		|  |--subfolder2
+		|  |  |--subsubfolder
+		|  |  |  |--subsubsubfolder1
+		|  |  |  |--subsubsubfolder2
+		|  |--subfolder3
+		|--anotherfolder
+
+Hint:
+	walk
+
+Pro-tip:
+	walk

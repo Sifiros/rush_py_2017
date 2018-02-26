@@ -45,10 +45,12 @@
 
 
 Subject:
-    You have to create a python module named TODO witch contain 3 functions:
-        function_absolute witch take an int as parameter and return it's absolute value
-        function_last take args as parameter and return the last one if it exist, else return None
-        function_a_times_b witch takes 2 names arguments a(default = 1) b(default=1) and return a multiplication between a and b
+    You have to create a python module named ex10 witch contain 3 functions:
+        - function_absolute witch take an int as parameter and return it's absolute value
+        - function_last take an unknown number of parameters
+	  return the last one if it exist, else None
+        - function_a_times_b witch takes 2 names arguments a(default = 1) b(default=1)
+	  return a multiplication between a and b
 
     The module also contains a class names class_storeaninteger
         It contain a constuctor witch initialize an integer i as member value.
@@ -70,15 +72,18 @@ Example:
      caca.add(-7)
      print(caca.is_zero())
      popo = 12
+     print(ex10.function_last('yes', 'non', 42, [], 'maybe'))
      print(ex10.function_a_times_b(popo, popo))
+     print(ex10.function_a_times_b(b=3))
 
  if __name__ == "__main__":
      main()
 
 should output :
     True
+    maybe
     144
+    3
 Hint:
     class
     import
-

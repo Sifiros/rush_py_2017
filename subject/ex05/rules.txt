@@ -46,7 +46,7 @@
 
 
 Subject:
-    You have to write a python program that prompt "dico>" and read the standard input.
+    You have to write a python program that prompt "dico> " and read the standard input.
     Your program will separate the input at the ':' character and associate the left part as a key and the right part as the value and display the key:value.
     If a key is used several times, the values are concatenated.
     On error the program must end without displaying anything.
@@ -54,11 +54,11 @@ Subject:
 FILENAME : ex05.py
 
     Exemple:
-        dico>mykey:myvalue
+        dico> mykey:myvalue
             mykey:myvalue
-        dico>sifi:swagg
+        dico> sifi:swagg
             sifi:swagg
-        dico>chicha:elMatador
+        dico> chicha:elMatador
             chicha:elMatador
-        dico>sifi:Ultime
+        dico> sifi:Ultime
             sifi:swaggUltime

@@ -167,11 +167,32 @@
 
 
 	
-	"EX06: NoLoop, Work In Progress": {
+	"EX06: MonoLineaire": {
 	    "totest": "$ex06/ex06.py",
 	    "reference": "ref/ex06.py",
 	    "pretests": ["resources/ex06/pretest.py"],
-	    "tests": {}
+	    "copy": {
+		"resources/ex06/file_very_simple": "file01"
+		"resources/ex06/file_simple": "file02"
+		"resources/ex06/file": "file03"
+	    },
+	    "tests": {
+		"TEST01: Very Simple Data": {
+		    "args": ["file01"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST02: Simple Data": {
+		    "args": ["file02"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST03: Data": {
+		    "args": ["file03"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		}
+	    }
 	},
 
 

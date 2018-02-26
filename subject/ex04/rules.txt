@@ -48,7 +48,7 @@
 Subject:
     You have to write a python program that imitate a basic bistro reading stdint (without the bases).
     Every input will be decimal.
-    You have to promp "bistro>" for each new calcul.
+    You have to promp "bistro> " for each new calcul.
     You also have to handle several exception types.
     If a sigint is sent to your program, you have to print "Ctrl + C" and exit.
     If the user make an error in the calcul syntax, you have to display "Bad Syntax" and exit.
@@ -59,10 +59,12 @@ FILENAME : bistro.py
 Basic Example :
     ./bistro.py
         bistro> 1+1
-            2
+	    2
         bistro> 42^3
-            41
-        bistro> 112*32--(4)
-            3588
+	    41
+	bistro> 112*32--(4)
+	    3588
+	bistro> 42/(1-0^1)    
+	    division by zero
 
 Hint: try except

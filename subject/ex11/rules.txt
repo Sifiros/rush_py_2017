@@ -46,7 +46,9 @@
 
 Subject:
 
-    You have to write a script that process the argument list exept the first one adding the md5 hashes. All arguments are integers.
+    You have to write a script that takes integers as parameters.
+    The script will add those integers and print the md5 hash of this sum.
+    Your script must not be longer than one line (except for imports and comments)
 
 FILENAME : ex11.py
 
@@ -54,8 +56,8 @@ Example:
     ./ex11.py 1 2 3 4
             d3d9446802a44259755d38e6d163e820
 
-    ./ex11.py
-            c4ca4238a0b923820dcc509a6f75849b
+    ./ex11.py 7 8987 897
+            ed1d136ff42ccec596038ba1c11c8a46
 
     ./ex11.py
             cfcd208495d565ef66e7dff9f98764da
