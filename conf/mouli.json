@@ -13,7 +13,7 @@
 
 	
 	"EX01: How to print \"Hello World\" ?": {
-	    "totest": "$ex01.py",
+	    "totest": "$ex01/hello_world.py",
 	    "reference": "ref/ex01.py",
 	    "tests": {
 		"Hello World": {
@@ -26,7 +26,7 @@
 
 	
 	"EX02: Print reversed arguments": {
-	    "totest": "$ex02.py",
+	    "totest": "$ex02/ex02.py",
 	    "reference": "ref/ex02.py",
 	    "tests": {
 		"TEST01: No parameters": {
@@ -49,7 +49,7 @@
 
 	
 	"EX03: Try cast Except": {
-	    "totest": "$ex03.py",
+	    "totest": "$ex03/multiPrinter.py",
 	    "reference": "ref/ex03.py",
 	    "tests": {
 		"TEST01: No parameters": {
@@ -92,7 +92,7 @@
 
 	
 	"EX04: Try Bistromatisme Except": {
-	    "totest": "$ex04.py",
+	    "totest": "$ex04/ex04.py",
 	    "reference": "ref/ex04.py",
 	    "copy": {
 		"resources/ex04/input_int": "input01",
@@ -127,7 +127,7 @@
 
 	
 	"EX05: {}": {
-	    "totest": "$ex05.py",
+	    "totest": "$ex05/ex05.py",
 	    "reference": "ref/ex05.py",
 	    "copy": {
 		"resources/ex05/input_ping_pong": "input01",
@@ -168,7 +168,7 @@
 
 	
 	"EX06: NoLoop, Work In Progress": {
-	    "totest": "$ex06.py",
+	    "totest": "$ex06/ex06.py",
 	    "reference": "ref/ex06.py",
 	    "pretests": ["resources/ex06/pretest.py"],
 	    "tests": {}
@@ -177,7 +177,7 @@
 
 	
 	"EX07: import magie": {
-	    "totest": "$ex07.py",
+	    "totest": "$ex07/ex07.py",
 	    "reference": "ref/ex07.py",
 	    "copy": {
 		"resources/ex07/data_simple.csv": "data01.csv"
@@ -197,7 +197,7 @@
 
 
 	"EX08: my_trii": {
-	    "totest": "$ex08.py",
+	    "totest": "$ex08/ex08.py",
 	    "reference": "ref/ex08.py",
 	    "copy": {
 		"resources/ex08/directory_empty": "dir01",
@@ -241,7 +241,7 @@
 
 
 	"EX09: H4<k3r": {
-	    "totest": "$ex09.py",
+	    "totest": "$ex09/ex09.py",
 	    "reference": "ref/ex09.py",
 	    "copy": {
 		"resources/ex09/data_poule": "data01"
@@ -261,7 +261,7 @@
 	    "totest": "resources/ex10/mouli.py",
 	    "reference": "resources/ex10/mouliref.py",
 	    "copy": {
-		"$ex10.py": null,
+		"$ex10/ex10.py": null,
 		"ref/ex10.py": "ex10ref.py",
 		"resources/ex10/tests.py": null
 	    },
@@ -273,7 +273,7 @@
 
 
 	"EX11: One Punch Line": {
-	    "totest": "$ex11.py",
+	    "totest": "$ex11/ex11.py",
 	    "reference": "ref/ex11.py",
 	    "pretests": ["resources/ex11/pretest.py"],
 	    "tests": {
@@ -292,7 +292,7 @@
 
 
 	"EX12: 2319!": {
-	    "totest": "$ex12.py",
+	    "totest": "$ex12/ex12.py",
 	    "reference": "ref/ex12.py",
 	    "pretests": ["resources/ex12/pretest.py"],
 	    "diff_services": [
@@ -306,11 +306,11 @@
 		    "cmpfiles": ["output"]
 		},
 		"TEST02: One argument": {
-		    "args": ["-Rla"],
+		    "args": ["-Ra"],
 		    "cmpfiles": ["output"]
 		},
 		"TEST03: Multiple arguments": {
-		    "args": ["-R", "-l", "-a"],
+		    "args": ["-R", "-r", "-a"],
 		    "cmpfiles": ["output"]
 		}
 	    }
@@ -319,7 +319,7 @@
 
 
 	"EX13: httping": {
-	    "totest": "$ex13.py",
+	    "totest": "$ex13/ex13.py",
 	    "reference": "ref/ex13.py",
 	    "copy": {
 		"resources/ex13/server.py": null
@@ -342,7 +342,7 @@
 
 
 	"EX14: Une idee de genie": {
-	    "totest": "$ex14.py",
+	    "totest": "$ex14/ex14.py",
 	    "reference": "ref/ex14.py",
 	    "copy": {
 		"resources/ex14/image_spiral.gif": "image01.gif"
@@ -360,7 +360,7 @@
 
 	"EX15: This ... is ... this !!!": {
 	    "binray": "./42",
-	    "totest": "$ex15.py",
+	    "totest": "$ex15/ex15.py",
 	    "reference": "ref/ex15.py",
 	    "pretests": ["resources/ex15/pretest.py"],
 	    "tests": {

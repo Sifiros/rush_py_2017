@@ -8,7 +8,7 @@ sudo pip3 install docker
 #si docker daemon pas start
 systemctl start docker
 
-docker pull chicha_j/container
+docker pull chichaj/mouli
        si pas le setup :
        	   su -
 	   groupadd docker

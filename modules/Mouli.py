@@ -123,6 +123,8 @@ class Mouli():
                 test_code = "KO"
                 if result.error[0]:
                     detailed += f"Error\n\n{result.error[0]}"
+                elif result.error[1]:
+                    detailed += f"Internal Error\n\n{result.error[1]}"
                 elif result.output[0] != result.output[1]:
                     detailed += "Output differs"
                     for cmpfile in test.cmpfiles:
