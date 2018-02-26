@@ -49,45 +49,12 @@ Subject:
     You have to write a program that take the content of a csv file given as parameter.
     You have to dump the equivalent of the csv file as a yml file (same name finishing by .yml) and json file (finishing by .json). While dumping you have to create for each keys, a list of values.
 
-<<<<<<< HEAD
 Hint:
     csv
     json
     yaml
-=======
-	For this exercise you are required to provide prettylog.py, an 
-executable that will parse a log file given as parameter and to display it in
-a prettyfied fashion.
-
-	By default, standard output will be used.
- 
-	Below are the prettifying rules you must follow depending on the 
-severity level:
-
-        * INFO will be in green
-        * DEBUG will be in blue
-        * FATAL will be in red
-        * ALERT will be in yellow
-
-	For the colors we provide you with the class Colors in Color.py.
-
-	You'll have to handle multiple parameters:
-
-	prettylog.py -i filepath [-w matchword] [-l sevlevel] [-f file]
-
-	-i|--input Is the path of the input file
-	-w|--word Indicates that only the lines whose log sentence include
-matchword will be dislayed
-it won't match datas like level and date.
-	-l Indicates that only the lines whose severity level are sevlevel
-	-f Is the path of the output file
 
 FILENAME : ex07.py
-
-Example:
-
-	25/10/2015 [INFO] all your base are belong to us
->>>>>>> b0e66473db236bb4bf96f6a3f5de8ee27d0d8850
 
 Exemple of csv file:
  Lead,Title,Phone,Notes
