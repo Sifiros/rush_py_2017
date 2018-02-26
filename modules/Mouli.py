@@ -88,7 +88,7 @@ class Mouli():
         result = {}
         for filepath in test.get("cmpfiles", []):
             try:
-                with open(os.path.join(self.config.mountpoints.local, filepath), "r") as f:
+                with open(os.path.join(self.config.mountpoints.local, filepath), 'rb') as f:
                     content = f.read().strip()
             except Exception as e:
                 return str(e), {}
@@ -131,8 +131,14 @@ class Mouli():
                         cmp0 = result.output[0][cmpfile]
                         cmp1 = result.output[1][cmpfile]
                         if cmp0 != cmp1:
-                            detailed += f"\n\nGot:\n{'>'*5}\n{cmp0}\n{'<'*5}"
-                            detailed += f"\n\nExpected:\n{'>'*5}\n{cmp1}\n{'<'*5}"
+                            try:
+                                cmp0 = cmp0.decode()
+                                cmp1 = cmp1.decode()
+                            except UnicodeError as e:
+                                detailed += f"\n\n'{cmpfile}' differ"
+                            else:
+                                detailed += f"\n\nGot:\n{'>'*5}\n{cmp0}\n{'<'*5}"
+                                detailed += f"\n\nExpected:\n{'>'*5}\n{cmp1}\n{'<'*5}"
                 else:
                     working += 1
                     test_code = "OK"
