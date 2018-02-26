@@ -1,5 +1,5 @@
 Subject:
-    you have to write a program that take a ls parameter as argument. it then connects to localhost port 4242 through tcp socket and send the ls output.
+    You have to write a program that take some ls parameters as argument. it then connects to localhost port 4242 through tcp socket and send the ls output.
 
 FILENAME : ex12.py
 
