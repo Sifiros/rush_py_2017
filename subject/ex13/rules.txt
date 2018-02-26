@@ -8,3 +8,5 @@ FILENAME : ex13.py
 Hint:
     datetime
     http.client
+
+To test we will give you a server IP during the rush.
