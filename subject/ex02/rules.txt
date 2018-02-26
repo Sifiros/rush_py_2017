@@ -53,4 +53,6 @@ Exemple:
     ./ex02 lil lol
         ['lil', 'lol']
 
+FILENAME : ex02.py
+
 Hint: slice

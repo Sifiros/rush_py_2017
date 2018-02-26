@@ -88,7 +88,7 @@ class Mouli():
         result = {}
         for filepath in test.get("cmpfiles", []):
             try:
-                with open(os.path.join(self.config.mountpoints.local, filepath), "r") as f:
+                with open(os.path.join(self.config.mountpoints.local, filepath), 'rb') as f:
                     content = f.read().strip()
             except Exception as e:
                 return str(e), {}
@@ -123,14 +123,22 @@ class Mouli():
                 test_code = "KO"
                 if result.error[0]:
                     detailed += f"Error\n\n{result.error[0]}"
+                elif result.error[1]:
+                    detailed += f"Internal Error\n\n{result.error[1]}"
                 elif result.output[0] != result.output[1]:
                     detailed += "Output differs"
                     for cmpfile in test.cmpfiles:
                         cmp0 = result.output[0][cmpfile]
                         cmp1 = result.output[1][cmpfile]
                         if cmp0 != cmp1:
-                            detailed += f"\n\nGot:\n{'>'*5}\n{cmp0}\n{'<'*5}"
-                            detailed += f"\n\nExpected:\n{'>'*5}\n{cmp1}\n{'<'*5}"
+                            try:
+                                cmp0 = cmp0.decode()
+                                cmp1 = cmp1.decode()
+                            except UnicodeError as e:
+                                detailed += f"\n\n'{cmpfile}' differ"
+                            else:
+                                detailed += f"\n\nGot:\n{'>'*5}\n{cmp0}\n{'<'*5}"
+                                detailed += f"\n\nExpected:\n{'>'*5}\n{cmp1}\n{'<'*5}"
                 else:
                     working += 1
                     test_code = "OK"

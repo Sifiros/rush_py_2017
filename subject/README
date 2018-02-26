@@ -37,17 +37,18 @@
                  |___/                                              
 
 -------------------------------------------------------------------------------
+How to send your files :
 
- _____         ___  _ 
-| ____|_  __  / _ \/ |
-|  _| \ \/ / | | | | |
-| |___ >  <  | |_| | |
-|_____/_/\_\  \___/|_|
+All your exercices must be in your epitech git repository : rush_python_2017
+    command : blih -u $YOUR_LOGIN repository create rush_python_2017
 
+All your exercices must have the following name : exXX/$FILE_NAME
 
-Subject:
+//TODO determinate who use the mouli during the rush
+You have to give the read rights on your repository to : vigand_q
+    command : blih -u $YOUR_LOGIN repository setacl rush_python_2017 vigand_q r
 
-    Create a simple program which will print "hello world" (without the 
-quotes) on the standart output.
-
-FILENAME : hello_world.py
+Examples (in rush_python_2017) :
+	ex01/hello_world.py
+	//TODO determine definitive name for all exercices
+	ex11/ex11.py

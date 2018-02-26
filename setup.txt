@@ -1,0 +1,17 @@
+#installer docker
+#avoir la version 3.0.1 de python docker
+
+
+
+sudo pip3 install docker
+
+#si docker daemon pas start
+systemctl start docker
+
+docker pull chichaj/mouli
+       si pas le setup :
+       	   su -
+	   groupadd docker
+	   usermod -aG docker USER
+	   exit
+docker run chichaj/mouli

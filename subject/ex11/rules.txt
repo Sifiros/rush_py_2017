@@ -48,7 +48,9 @@ Subject:
 
     You have to write a script that process the argument list exept the first one adding the md5 hashes. All arguments are integers.
 
-Exemple:
+FILENAME : ex11.py
+
+Example:
     ./ex11.py 1 2 3 4
             d3d9446802a44259755d38e6d163e820
 

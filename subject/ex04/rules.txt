@@ -54,8 +54,10 @@ Subject:
     If the user make an error in the calcul syntax, you have to display "Bad Syntax" and exit.
     On every other exeptions, you have to print the standard python error message for that case and exit.
 
-Basic Exemple:
-    ./ex04
+FILENAME : bistro.py
+
+Basic Example :
+    ./bistro.py
         bistro> 1+1
             2
         bistro> 42^3

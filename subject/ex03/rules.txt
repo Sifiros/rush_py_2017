@@ -49,14 +49,16 @@ Subject:
 
 You have to write a python program that takes 2 parameters n and value. It will print n times value on stdout. On EVERY error cases, it must print Error.
 
-Exemple :
-    ./multiPrinter 3 3
+FILENAME : multiPrinter.py
+
+Examples :
+    ./multiPrinter.py 3 3
             333
 
-    ./multiPrinter 3 foo
+    ./multiPrinter.py 3 foo
             foofoofoo
 
-    ./multiPrinter n00b foo
+    ./multiPrinter.py n00b foo
             Error
 
 hint:

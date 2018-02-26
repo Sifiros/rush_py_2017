@@ -60,8 +60,10 @@ Subject:
 	Append '.in' to that string to get the input file path.
 	Append '.out' to get the output file path.
 
+FILENAME : ex09.py
+
 Basic Exemple:
-       ./ex09 ../somewhere/filename
+       ./ex09.py ../somewhere/filename
        	      => ../somewhere/filename.in  is the input file
        	      => ../somewhere/filename.out is the output file
 

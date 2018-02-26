@@ -50,5 +50,6 @@ Subject:
     To write this program, you have one constraint:
         Your program must be 3 lines maximum (shebang does not count and ';' is illegal)
 
+FILENAME : ex06.py
 
         Describe the oneLINER # TODO TODO

@@ -51,6 +51,8 @@ Subject:
 parameter and will output the hash of the string in md5, sha1, and sha384 all 
 of them should be in hexadecimal
 
+FILENAME : ex08.py
+
 Example:
 
 	$> ./hashing.py
