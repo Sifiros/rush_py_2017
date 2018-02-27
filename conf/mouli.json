@@ -172,8 +172,8 @@
 	    "reference": "ref/ex06.py",
 	    "pretests": ["resources/ex06/pretest.py"],
 	    "copy": {
-		"resources/ex06/file_very_simple": "file01"
-		"resources/ex06/file_simple": "file02"
+		"resources/ex06/file_very_simple": "file01",
+		"resources/ex06/file_simple": "file02",
 		"resources/ex06/file": "file03"
 	    },
 	    "tests": {
