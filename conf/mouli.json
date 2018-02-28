@@ -12,7 +12,7 @@
 
 
 	
-	"EX01: How to print \"Hello World\" ?": {
+	"EX01: How to print \"hello world\" ?": {
 	    "totest": "$ex01/hello_world.py",
 	    "reference": "ref/ex01.py",
 	    "tests": {
@@ -92,7 +92,7 @@
 
 	
 	"EX04: Try Bistromatisme Except": {
-	    "totest": "$ex04/ex04.py",
+	    "totest": "$ex04/bistro.py",
 	    "reference": "ref/ex04.py",
 	    "copy": {
 		"resources/ex04/input_int": "input01",

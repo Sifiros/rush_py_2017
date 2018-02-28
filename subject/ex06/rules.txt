@@ -47,9 +47,26 @@
 
 Subject:
 
-    To write this program, you have one constraint:
-        Your program must be 3 lines maximum (shebang does not count and ';' is illegal)
+    To write this program, you have several constraints:
+        Your program must be 3 lines maximum (shebang does not count)
+	';', ':' and keyword 'eval' are illegal
+
+Your program takes a filename as parameter and displays all the worlds in it once each,
+sorted alphabetically and separated by space.
+
+Example :
+>cat toto
+
+je trié
+  je
+
+
+suis   je   
+>./ex06.py toto
+je suis trié
+>
+
+Hint:
+keywords, set
 
 FILENAME : ex06.py
-
-        Describe the oneLINER # TODO TODO

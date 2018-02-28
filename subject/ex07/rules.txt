@@ -56,7 +56,7 @@ Hint:
 
 FILENAME : ex07.py
 
-Exemple of csv file:
+Example of csv file:
  Lead,Title,Phone,Notes
  Jim Grayson,Senior Manager,(555)761-2385,"Spoke Tuesday, he's interested"
  Prescilla Winston,Development Director,(555)218-3981,said to call again next week

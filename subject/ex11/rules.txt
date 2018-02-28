@@ -46,7 +46,7 @@
 
 Subject:
 
-    You have to write a script that takes integers as parameters.
+    You have to write a script that takes several integers as parameters.
     The script will add those integers and print the md5 hash of this sum.
     Your script must not be longer than one line (except for imports and comments)
 

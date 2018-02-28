@@ -49,7 +49,7 @@ Subject:
 
     Create a python program that display the argument list without the program name in reverse order as a list
 
-Exemple:
+Example:
     ./ex02 lil lol
         ['lil', 'lol']
 

@@ -46,7 +46,7 @@
 
 
 Subject:
-	You have to read an input file containing the following informations:
+	You have to read an input file containing the following informations (non human readable):
 	       - A long integer: representing the message size
 	       - A short integer: representing the key size
 	       - A string: representing the message
