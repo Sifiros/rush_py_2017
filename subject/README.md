@@ -39,17 +39,23 @@
 -------------------------------------------------------------------------------
 How to send your files :
 
-All your exercices must be in your epitech git repository : rush_py_2017
+All your exercices must be in your epitech git repository :
+# rush_py_2017
     command : blih -u $YOUR_LOGIN repository create rush_py_2017
 
-All your exercices must have the following name : exXX/$FILE_NAME
+All your exercices must have the following name : ex**XX**/**$FILE_NAME**
 
-//TODO determinate who use the mouli during the rush
 You have to give the read rights on your repository to the appropriate tek3
 (we will tell you wich of those host the automatized test for you during the rush) :
-vigand_q chicha_j bel_m gillou_g
-    ~~command~~ : *blih -u $YOUR_LOGIN repository setacl rush_py_2017 vigand_q r*
+### vigand_q chicha_j bel_m gillou_g
+    command : blih -u $YOUR_LOGIN repository setacl rush_py_2017 vigand_q r
 
 Examples (in rush_python_2017) :
 	ex01/hello_world.py
 	ex11/ex11.py
+
+
+
+Subjects available here :
+
+https://github.com/ANameIsAlreadyTaken/rush_py_2017_subject/
