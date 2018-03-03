@@ -15,6 +15,9 @@ from datetime import datetime
 from collections import defaultdict
 from contextlib import closing
 
+class MsgError(BaseException):
+    pass
+
 @Verbose.Verbosable
 class Mouli():
     def __init__(self, config_path, mailserver_path):
@@ -132,10 +135,12 @@ class Mouli():
                         cmp1 = result.output[1][cmpfile]
                         if cmp0 != cmp1:
                             try:
+                                if len(cmp0) > 10000 or len(cmp1) > 10000:
+                                    raise MsgError()
                                 cmp0 = cmp0.decode()
                                 cmp1 = cmp1.decode()
-                            except UnicodeError as e:
-                                detailed += f"\n\n'{cmpfile}' differ"
+                            except (UnicodeError, MsgError) as e:
+                                detailed += f"\n\n'{cmpfile}' differ but is unprintable"
                             else:
                                 detailed += f"\n\nGot:\n{'>'*5}\n{cmp0}\n{'<'*5}"
                                 detailed += f"\n\nExpected:\n{'>'*5}\n{cmp1}\n{'<'*5}"
