@@ -201,17 +201,22 @@
 	    "totest": "$ex07/ex07.py",
 	    "reference": "ref/ex07.py",
 	    "copy": {
-		"resources/ex07/data_simple.csv": "data01.csv"
+		"resources/ex07/data_simple.csv": "data01.csv",
+		"resources/ex07/data_simple2.csv": "data02.csv"
 	    },
 	    "tests": {
 		"TEST01: Data Simple": {
 		    "args": ["data01"],
 		    "cmpfiles": ["data01.json", "data01.yml"]
 		},
-		"TEST02: Just don't break": {
+		"TEST02: Data Simple 2": {
+		    "args": ["data02"],
+		    "cmpfiles": ["data02.json", "data02.yml"]
+		},
+		"TEST03: Just don't break": {
 		    "args": ["toto"]
 		},
-		"TEST03: Just don't break V2": {}
+		"TEST04: Just don't break V2": {}
 	    }
 	},
 	
