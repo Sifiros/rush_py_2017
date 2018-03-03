@@ -270,11 +270,23 @@
 	    "totest": "$ex09/ex09.py",
 	    "reference": "ref/ex09.py",
 	    "copy": {
-		"resources/ex09/data_poule": "data01"
+		"resources/ex09/data_poule": "data01",
+		"resources/ex09/data_pinche": "data02",
+		"resources/ex09/data_dotto": "data03"
 	    },
 	    "tests": {
 		"TEST01: Pondre des oeufs": {
 		    "args": ["data01"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST02: P*ncheL*mouroux": {
+		    "args": ["data02"],
+		    "stdout": "output",
+		    "cmpfiles": ["output"]
+		},
+		"TEST03: Bruddah": {
+		    "args": ["data03"],
 		    "stdout": "output",
 		    "cmpfiles": ["output"]
 		}
