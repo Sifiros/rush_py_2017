@@ -11,7 +11,7 @@ def get_students(path, group_count, group_idx):
     end = None if group_idx >= group_count - 1 else begin + group_size
     return student_logins[slice(begin, end)]
 
-student_logins = get_students('students.csv', 4, 2)
+student_logins = get_students('students.csv', 2, 0)
 
 with Mouli.load_closing_context("conf/mouli.json", "conf/mailserver.json", verbose=True) as mouli:
     results = mouli.clone_and_test(student_logins, send=True)
