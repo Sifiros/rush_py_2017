@@ -270,23 +270,11 @@
 	    "totest": "$ex09/ex09.py",
 	    "reference": "ref/ex09.py",
 	    "copy": {
-		"resources/ex09/data_poule": "data01",
-		"resources/ex09/data_pinche": "data02",
-		"resources/ex09/data_dotto": "data03"
+		"resources/ex09/data_poule": "data01"
 	    },
 	    "tests": {
 		"TEST01: Pondre des oeufs": {
 		    "args": ["data01"],
-		    "stdout": "output",
-		    "cmpfiles": ["output"]
-		},
-		"TEST02: P*ncheL*mouroux": {
-		    "args": ["data02"],
-		    "stdout": "output",
-		    "cmpfiles": ["output"]
-		},
-		"TEST03: Bruddah": {
-		    "args": ["data03"],
 		    "stdout": "output",
 		    "cmpfiles": ["output"]
 		}
@@ -376,6 +364,25 @@
 		}
 	    }
 	},
+	
+
+
+	"EX14: Une idee de genie": {
+	    "totest": "$ex14/ex14.py",
+	    "reference": "ref/ex14.py",
+	    "copy": {
+		"resources/ex14/image_spiral.gif": "image01.gif"
+	    },
+	    "timeout": 20,
+	    "tests": {
+		"TEST01: You spin me right round": {
+		    "args": ["image01"],
+		    "cmpfiles": ["image01-reversed.gif"]
+		}
+	    }
+	},
+	
+
 
 	"EX15: This ... is ... this !!!": {
 	    "binray": "./42",
